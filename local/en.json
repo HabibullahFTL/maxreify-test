@@ -1,0 +1,21 @@
+{
+  "login.heading": "Logon",
+  "login.input.email.label": "Email address",
+  "login.input.email.placeholder": "Enter your email address...",
+  "login.button.submit.label": "Continue",
+
+  "verification.heading": "Check your phone",
+  "verification.input.verification_code.label": "Verification code",
+  "verification.button.submit.label": "Logon",
+
+  "dashboard.heading": "Dashboard",
+  "dashboard.welcome.text": "Hello!",
+  "dashboard.button.submit.label.manager": "I am a manager",
+  "dashboard.button.submit.label.team": "I am a team leader",
+  "dashboard.button.submit.label": "Logout",
+
+  "profile.heading": "Edit Profile",
+  "profile.input.name.label": "Name",
+  "profile.input.name.placeholder": "Enter your full name...",
+  "profile.button.submit.label": "Update Profile"
+}

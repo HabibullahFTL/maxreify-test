@@ -1,0 +1,21 @@
+{
+  "login.heading": "Conectare",
+  "login.input.email.label": "Adresa de e-mail",
+  "login.input.email.placeholder": "Introdu adresa ta de e-mail...",
+  "login.button.submit.label": "Continua",
+
+  "verification.heading": "Verifică-ți telefonul",
+  "verification.input.verification_code.label": "Cod de verificare",
+  "verification.button.submit.label": "Conectare",
+
+  "dashboard.heading": "Pagina principala",
+  "dashboard.welcome.text": "Salut!",
+  "dashboard.button.submit.label.manager": "Sunt manager",
+  "dashboard.button.submit.label.team": "Sunt un lider de echipă",
+  "dashboard.button.submit.label": "Deconectare",
+
+  "profile.heading": "Editează profilul",
+  "profile.input.name.label": "Nume",
+  "profile.input.name.placeholder": "Introduceți numele dvs. complet...",
+  "profile.button.submit.label": "Actualizare profil"
+}
