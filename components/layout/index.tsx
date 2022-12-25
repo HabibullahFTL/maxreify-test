@@ -22,7 +22,7 @@ const Layout: FC<{ children: JSX.Element; title?: string }> = ({
   }, []);
 
   return isHydrated ? (
-    <div className="h-screen max-w-[400px] min-h-[500px] mx-auto sm:shadow-md sm:px-3">
+    <div className="h-screen max-w-[450px] min-h-[500px] mx-auto sm:shadow-md sm:px-3">
       {/* Here I'm checking that the user is logged in or not  */}
       {auth?.isLoggedIn ? (
         <>

@@ -2,7 +2,7 @@ import create from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
 interface AuthState {
-  isLoggedIn: boolean;
+  isLoggedIn?: boolean;
   token?: string;
   user?: {
     avatar: {
@@ -21,6 +21,7 @@ interface StoreState {
   language: string;
   changeLanguage: () => void;
   setLogin: (payload: any) => void;
+  updateProfile: (payload: any) => void;
   setLogout: () => void;
 }
 
@@ -42,6 +43,11 @@ const useStore = create<StoreState>()(
               token: payload?.token,
               user: payload?.user,
             },
+          }));
+        },
+        updateProfile: (payload) => {
+          set((state) => ({
+            auth: payload,
           }));
         },
         setLogout: () => {

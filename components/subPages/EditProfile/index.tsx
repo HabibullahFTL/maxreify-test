@@ -1,16 +1,20 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import useStore from '../../../store';
 import { getLocalText } from '../../../utils/localsHandling/getLocalText';
+import postRequest from '../../../utils/request/postRequest';
 import { Button, FormInput } from '../../reusable';
 
 const EditProfile = () => {
-  const { auth, language } = useStore((state) => state);
+  const { auth, language, updateProfile } = useStore((state) => state);
   const [isLoading, setIsLoading] = useState(false);
+
+  const { push } = useRouter();
 
   const formMethods = useForm({
     resolver: yupResolver(
@@ -27,7 +31,27 @@ const EditProfile = () => {
   });
 
   const onSubmit = (values: any) => {
-    console.log(values);
+    setIsLoading(true);
+
+    postRequest(
+      `user/4?full_name=${values?.full_name}`,
+      {},
+      { Authorization: auth?.token }
+    )
+      ?.then((response) => {
+        const finalData = {
+          ...auth,
+          user: { ...auth?.user, full_name: values?.full_name },
+        };
+        console.log({ finalData });
+
+        updateProfile(finalData);
+        push('/');
+      })
+      .catch((error) => {})
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   return (
